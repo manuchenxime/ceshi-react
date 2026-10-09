@@ -11,7 +11,7 @@ function App() {
    <Routes>
     
         <Route path="/" element={<Home cursos={cursos} setCursos={setCursos}/>} />
-                <Route path="/" element={<FormUser />} />
+                <Route path="/formularioUsuario" element={<FormUser />} />
       </Routes>
   </>
   )

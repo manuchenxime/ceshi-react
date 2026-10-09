@@ -82,7 +82,7 @@ function excluir(id){
         <div key={curso.id}>
         <Card nome={curso.nome} descricao={curso.descricao} carga={curso.carga} />
         <button onClick={()=>excluir(curso.id)}>Excluir curso</button>
-        <Link to="/contact">Contact</Link>
+        <Link to="/formularioUsuario">inscreva-se</Link>
         </div>
         )
     ):(
