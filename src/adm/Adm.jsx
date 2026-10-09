@@ -1,16 +1,6 @@
-import { useState } from "react"
-import Card from "../Card/Card"
-import { Link } from "react-router-dom"
-import './Home.css'
+function Adm({cursos, setCursos, nome, descricao, carga, modalidade, quantVagas, data,  setNome, setDescricao, setCarga, setModalidade, setQuantVagas, setData}){
 
-function Home({cursos, setCursos, nome, descricao, carga, modalidade, quantVagas, data,  setNome, setDescricao, setCarga, setModalidade, setQuantVagas, setData}){
-const [pesquisa, setPesquisa] = useState("")
-
-const resultadoPesquisa = cursos.filter((curso)=>
-curso.nome.toLowerCase().includes(pesquisa.toLowerCase())
-)
-
-function adicionar(e){
+    function adicionar(e){
 e.preventDefault()
 
 if(nome.length < 1){
@@ -56,42 +46,9 @@ setCursos(listaAtualizada)
 
 alert("Curso criado com sucesso!")
 }
-
-function excluir(id){
-    setCursos(cursos.filter((curso)=>
-    curso.id !== id
-    ))
-}
-
-
-
     return(
         <>
- 
- <Link to="/meusCursos">Meus Cursos</Link>
- <Link to="/adm">Area administrativs</Link>
-        <input
-         type="text"
-         value={pesquisa}
-         onChange={(e)=>setPesquisa(e.target.value)}
-         placeholder="Pesquise um curso"
-         />
-{
-    resultadoPesquisa.length > 0 ? (
-        resultadoPesquisa.map((curso)=>
-        <div key={curso.id}>
-        <Card nome={curso.nome} descricao={curso.descricao} carga={curso.carga} />
-        <button onClick={()=>excluir(curso.id)}>Excluir curso</button>
-        <button>Editar</button>
-        <Link to="/detalhesCurso">ver detalhes</Link>
-        </div>
-        )
-    ):(
-        <h1>Não ha cursos com essa informação</h1>
-    )
-
-}
-<form onSubmit={adicionar}>
+        <form onSubmit={adicionar}>
     <h1>Cadastre um curso</h1>
 <input
  type="text"
@@ -135,4 +92,4 @@ function excluir(id){
         </>
     )
 }
-export default Home
+export default Adm
