@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import Home from './Home/Home';
+import FormUser from './FormUser/FormUser';
 function App() {
- const [alunos, setAlunos] = useState([])
+ const [cursos, setCursos] = useState([])
 
   return (
   <>
    <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+    
+        <Route path="/" element={<Home cursos={cursos} setCursos={setCursos}/>} />
+                <Route path="/" element={<FormUser />} />
       </Routes>
   </>
   )
