@@ -2,14 +2,8 @@ import { useState } from "react"
 import Card from "../Card/Card"
 import { Link } from "react-router-dom"
 
-function Home({cursos, setCursos}){
-const [nome, setNome] = useState("")
-const [descricao, setDescricao] = useState("")
-const [carga, setCarga] = useState("")
-const [pesquisa, setPesquisa]= useState("")
-const [modalidade, setModalidade] = useState("")
-const [quantVagas, setQuantVagas] = useState("")
-const [data, setData] = useState("")
+function Home({cursos, setCursos, nome, descricao, carga, modalidade, quantVagas, data,  setNome, setDescricao, setCarga, setModalidade, setQuantVagas, setData}){
+const [pesquisa, setPesquisa] = useState("")
 
 const resultadoPesquisa = cursos.filter((curso)=>
 curso.nome.toLowerCase().includes(pesquisa.toLowerCase())
@@ -68,6 +62,8 @@ function excluir(id){
     ))
 }
 
+
+
     return(
         <>
  <Link to="/meusCursos">Meus Cursos</Link>
@@ -83,7 +79,7 @@ function excluir(id){
         <div key={curso.id}>
         <Card nome={curso.nome} descricao={curso.descricao} carga={curso.carga} />
         <button onClick={()=>excluir(curso.id)}>Excluir curso</button>
-        <Link to="/formularioUsuario">inscreva-se</Link>
+        <Link to="/detalhesCurso">ver detalhes</Link>
         </div>
         )
     ):(
