@@ -9,7 +9,7 @@ function FormUser(){
 
     function cadastrar(e){
 e.preventDefault()
-if(nomeCom.length < 1){
+if(nomeCom.length < 2){
     alert("preencha um nome")
     return
 }

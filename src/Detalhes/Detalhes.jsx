@@ -1,7 +1,7 @@
 import Card from "../Card/Card"
 import { Link } from "react-router-dom"
 
-function Detalhes({cursos, setCursos, nome, descricao, carga, modalidade, quantVagas, data,  setNome, setDescricao, setCarga, setModalidade, setQuantVagas, setData}){
+function Detalhes({cursos, setCursos, nome, descricao, carga, modalidade, quantVagas, data}){
 
     return(
         <>

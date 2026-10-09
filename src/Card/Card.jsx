@@ -1,6 +1,7 @@
+import './card.css'
 function Card({nome, descricao, carga, modalidade, quantVagas, data}){
     return(
-        <div>
+        <div className='cardFundo'>
             <h1>Nome:{nome}</h1>
             <h3>Desc:{descricao}</h3>
                 <p>Carga:{carga}</p>

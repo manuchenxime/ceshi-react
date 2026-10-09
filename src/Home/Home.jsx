@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Card from "../Card/Card"
 import { Link } from "react-router-dom"
+import './Home.css'
 
 function Home({cursos, setCursos, nome, descricao, carga, modalidade, quantVagas, data,  setNome, setDescricao, setCarga, setModalidade, setQuantVagas, setData}){
 const [pesquisa, setPesquisa] = useState("")
@@ -66,6 +67,7 @@ function excluir(id){
 
     return(
         <>
+ 
  <Link to="/meusCursos">Meus Cursos</Link>
         <input
          type="text"
@@ -79,6 +81,7 @@ function excluir(id){
         <div key={curso.id}>
         <Card nome={curso.nome} descricao={curso.descricao} carga={curso.carga} />
         <button onClick={()=>excluir(curso.id)}>Excluir curso</button>
+        <button>Editar</button>
         <Link to="/detalhesCurso">ver detalhes</Link>
         </div>
         )
