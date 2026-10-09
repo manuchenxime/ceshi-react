@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Card from "../Card/Card"
+import { Link } from "react-router-dom"
 
 function Home({cursos, setCursos}){
 const [nome, setNome] = useState("")
@@ -69,7 +70,7 @@ function excluir(id){
 
     return(
         <>
-
+ <Link to="/meusCursos">Meus Cursos</Link>
         <input
          type="text"
          value={pesquisa}

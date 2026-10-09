@@ -28,5 +28,37 @@ if(cpf.length !== 11){
 
     alert("inscrito com sucesso!")
     }
+
+    return(
+        <>
+        <form onSubmit={cadastrar}>
+            <input
+             type="text"
+             value={nomeCom}
+             onChange={(e)=>setNomeCom(e.target.value)}
+             placeholder="Digite seu nome completo"
+             />
+                         <input
+             type="text"
+             value={email}
+             onChange={(e)=>setEmail(e.target.value)}
+             placeholder="Digite seu Email"
+             />
+                         <input
+             type="number"
+             value={cpf}
+             onChange={(e)=>setCpf(e.target.value)}
+             placeholder="Digite seu CPF" 
+             />
+                         <input
+             type="text"
+             value={dataNasc}
+             onChange={(e)=>setDataNasc(e.target.value)}
+             placeholder="Digite sua data de nascimento"
+             />
+             <button type="submit">Inscrever-se</button>
+        </form>
+        </>
+    )
 }
 export default FormUser
